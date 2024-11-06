@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FV-Vision 2000+ Table 1</title>
+    <style>
+        /* Style de la page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="password"] {
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenu protégé -->
+    <div class="content" id="content">
+        <h1>FV-Vision 2000+ Table 1</h1>
+        <p>Bienvenue sur le site sécurisé de FV-Vision 2000+ Table 1.</p>
+    </div>
+
+    <!-- Formulaire de connexion -->
+    <div class="login-container" id="loginForm">
+        <h2>Entrez le mot de passe pour accéder à la page</h2>
+        <input type="password" id="password" placeholder="Mot de passe" />
+        <button onclick="checkPassword()">Accéder</button>
+        <p class="error" id="errorMessage">Mot de passe incorrect. Essayez à nouveau.</p>
+    </div>
+
+    <script>
+        // Mot de passe défini
+        const correctPassword = '12345'; // Mot de passe sécurisé
+
+        // Fonction pour vérifier le mot de passe
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+
+            if (password === correctPassword) {
+                document.getElementById('loginForm').style.display = 'none'; // Masquer le formulaire
+                document.getElementById('content').style.display = 'block'; // Afficher le contenu
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
